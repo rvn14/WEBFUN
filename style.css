@@ -20,6 +20,7 @@ body{
     top: 0px;
     display: flex;
     align-items: center;
+    z-index: 2;
     /* border: 2px solid white; */
 
 }
@@ -105,6 +106,10 @@ body{
     background-position: 50% 100%;
     background-size: 100vw;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    
+
     /* border: 2px solid red; */
     
 }
@@ -115,4 +120,90 @@ body{
 
     background-color: rgb(0, 255, 255);
     /* border: 2px solid red; */
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    position: fixed;
+    bottom: 20px;
+    
+    
+    
+    
+    
+}
+
+.wrapper{
+    
+    position: relative;
+    display: flex;
+    /* width: 80vw;
+    height: 40vw; */
+    background-color: white;
+    
+}
+.slides{
+    
+    width: 80vw;
+    /* height: 40vw; */
+    /* aspect-ratio: 16/9; */
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    
+    
+}
+.slide div{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+#slide-1{
+    background-image: url(assets/bg1.jpeg);
+    min-width: 80vw;
+    height: 40vw;
+    background-position: center;
+    background-size: cover;
+}
+#slide-2 {
+    background-image: url(assets/bg2.jpeg);
+    min-width: 80vw;
+    height: 40vw;
+    background-position: center;
+    background-size: cover;
+}
+#slide-3 {
+    background-image: url(assets/bg3.jpeg);
+    min-width: 80vw;
+    height: 40vw;
+    background-position: center;
+    background-size: cover;
+}
+
+.slidernav{
+    position: absolute;
+    display: flex;
+    column-gap: 15px;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    
+}
+
+.slidernav a{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    opacity: 75%;
+    transition: 0.3s;
+    
+}
+.slidernav a:hover {
+    opacity: 100%;
 }
