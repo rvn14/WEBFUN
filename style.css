@@ -5,8 +5,9 @@
 }
 
 body{
-    overflow-x: hidden;
+     
     scroll-behavior:smooth ;
+    overflow-x: hidden;
     
 
 }
@@ -34,6 +35,7 @@ body{
     background-size: cover;
     position: absolute ;
     top: 5px;
+    cursor: pointer;
 
 }
 
@@ -53,6 +55,11 @@ body{
 .tabbar a{
     text-decoration: none;
     color: white;
+    transition: 0.3s;
+}
+
+.tabbar a:hover{
+    color: rgb(24, 153, 228) ;
 }
 
 .log{
@@ -100,11 +107,12 @@ body{
     align-items: center;
 }
 .background{
-    height: calc(100*0.56vw);
+    height: 100vh;
     width: 100vw;
-    background-image: linear-gradient(rgba(0, 18, 51, 0.7), rgba(0, 0, 0, 0.9)),url(assets/wp.jpg);
-    background-position: 50% 100%;
-    background-size: 100vw;
+    background-image: linear-gradient(rgba(0, 18, 51, 0.8), rgba(0, 0, 0, 0.9)),url(assets/wp.jpg);  
+    background-position: center;
+    background-size: 1920px;
+    
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -118,30 +126,148 @@ body{
     height: 100vh;
     width: 100vw;
 
-    background-color: rgb(0, 255, 255);
+    background-color: blueviolet;
     /* border: 2px solid red; */
 }
 
-.container{
-    position: absolute;
-    width: 73vw;
-    height: 40vw;
-    top: 70px;
+/* .slider{
+    width: 83vw;
+    top: 20px;
+    position: relative;
+    
+    
+
 }
+
 .wrapper{
-    display: flex;
-    flex: 1 0 100%;
-    overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    position: absolute;
+    display: flex;
+    overflow-x: scroll;
+    
+
 }
+
 .wrapper::-webkit-scrollbar{
     display: none;
 }
 
 .wrapper img{
-    width: 73vw;
     scroll-snap-align: start;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: 1s ease;
+    
+}
+.wrapper img:first-child{
+    margin-left: 0;
+}
+
+.navbuttns img{
+    position: absolute;
+    z-index: 3;
+    top: 45%;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 10px 20px;
+    backdrop-filter: blur(5px); 
+}
+.navbuttns img:hover{
+    opacity: 0.8;
+}
+
+#arrowb{
+    left: 40px;
+}
+#arrowf{
+    right: 40px;
+} */
+
+
+.container{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+        justify-content: center;
+        /* align-items: center; */
+    
+
+
+}
+
+.carousel{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 300%;
+    display: flex;
+    transition: 0.5s ease-in-out;
+    transform: translateX(00%);
     
 }
 
+.slides{
+    /* border: 1px solid blue; */
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transform: translateX(00%);
+    box-sizing: border-box;
+    
+}
+
+#slide1{
+    background-image: url(assets/bg1.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#slide2 {
+    background-image: url(assets/bg3.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#slide3 {
+    background-image: url(assets/bg2.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.navbttns{
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-32px);
+    cursor: pointer;
+}
+
+.arrow{
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+.arrow:hover{
+    opacity: 0.8;
+}
+
+.arrow.back{
+    position: absolute;
+    right: 40vw;
+}
+.arrow.foward{
+    position: absolute;
+    left: 40vw;
+}
